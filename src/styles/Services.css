@@ -1,0 +1,146 @@
+/* SERVICES SECTION */
+
+.services-section {
+  background: #101c2c;
+  padding: 110px 8%;
+}
+
+/* SECTION HEADING */
+
+.services-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.services-heading h2 {
+  font-family: Georgia, serif;
+  color: white;
+  font-size: clamp(35px, 4vw, 50px);
+  margin: 22px 0;
+}
+
+.services-heading h2 span {
+  color: #c5a46d;
+}
+
+.services-heading p {
+  color: #b7c0ca;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* BUSINESS GRID */
+
+.business-grid {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* BUSINESS CARD */
+
+.business-card {
+  padding: 32px;
+  min-height: 245px;
+
+  border: 1px solid rgba(197, 164, 109, 0.2);
+  background: rgba(255, 255, 255, 0.035);
+
+  transition: 0.35s;
+}
+
+/* CARD HOVER EFFECT */
+
+.business-card:hover {
+  transform: translateY(-7px);
+  border-color: #c5a46d;
+  background: rgba(197, 164, 109, 0.08);
+}
+
+/* CARD TOP */
+
+.business-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #c5a46d;
+  margin-bottom: 30px;
+}
+
+.business-number {
+  color: #8e9baa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* CARD TITLE */
+
+.business-card h3 {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+/* CARD DESCRIPTION */
+
+.business-card p {
+  color: #aeb8c4;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 48px;
+}
+
+/* EXPLORE LINK */
+
+.business-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #c5a46d;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.business-card a:hover {
+  color: #e0bd80;
+  gap: 13px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .business-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .services-section {
+    padding: 75px 6%;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-card {
+    min-height: auto;
+  }
+
+  .services-heading {
+    margin-bottom: 40px;
+  }
+}

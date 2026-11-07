@@ -1,0 +1,102 @@
+.about-section {
+  padding: 110px 8%;
+  background: #f5f3ee;
+}
+
+.about-container {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  min-height: 450px;
+
+  background:
+    linear-gradient(
+      rgba(16, 28, 44, 0.3),
+      rgba(16, 28, 44, 0.8)
+    ),
+    url("/hero.jpg") center/cover no-repeat,
+    #24354a;
+
+  display: flex;
+  align-items: flex-end;
+  padding: 35px;
+}
+
+.about-image-content span {
+  color: #c5a46d;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.about-image-content h2 {
+  color: white;
+  font-size: 35px;
+  font-family: Georgia, serif;
+  margin-top: 10px;
+}
+
+.section-label {
+  color: #a7834e;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.about-content h2 {
+  color: #101c2c;
+  font-family: Georgia, serif;
+  font-size: clamp(35px, 4vw, 48px);
+  line-height: 1.2;
+  margin: 25px 0;
+}
+
+.about-content h2 span {
+  color: #b18c53;
+}
+
+.about-content p {
+  color: #656565;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #101c2c;
+  text-decoration: none;
+  font-weight: 700;
+
+  margin-top: 20px;
+  border-bottom: 1px solid #b18c53;
+  padding-bottom: 8px;
+}
+
+.about-link:hover {
+  color: #b18c53;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 70px 6%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image {
+    min-height: 320px;
+  }
+}
