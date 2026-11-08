@@ -1,0 +1,408 @@
+
+/* =================================
+   FOUNDER SECTION
+================================= */
+
+.founder-section {
+  width: 100%;
+  padding: 115px 0 110px;
+  background: #f8fcfd;
+  overflow: hidden;
+}
+
+.founder-container {
+  width: 88%;
+  max-width: 1620px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: clamp(80px, 13vw, 235px);
+}
+
+/* =================================
+   LEFT FOUNDER VISUAL
+================================= */
+
+.founder-visual {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.founder-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.07 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #edf9fb,
+    #e0f4f2
+  );
+
+  border: 1px solid #d0e3e6;
+  overflow: hidden;
+}
+
+/* Prevent unwanted dark overlays */
+
+.founder-frame::before,
+.founder-frame::after {
+  content: none !important;
+}
+
+/* CIRCLES */
+
+.founder-circle {
+  position: absolute;
+  border: 1px solid rgba(213, 169, 78, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-outer {
+  width: 84%;
+  aspect-ratio: 1;
+}
+
+.circle-inner {
+  width: 65%;
+  aspect-ratio: 1;
+}
+
+/* CENTER ICON */
+
+.founder-placeholder {
+  position: relative;
+  z-index: 2;
+
+  width: 85px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #269f91;
+
+  border: 1px solid #d5a94e;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* CAPTION */
+
+.founder-image-caption {
+  position: absolute;
+  top: 61%;
+  left: 0;
+
+  width: 100%;
+  margin: 0;
+
+  text-align: center;
+
+  color: #718397;
+  font-size: 11px;
+  line-height: 1.5;
+  z-index: 3;
+}
+
+/* CORNER LINES */
+
+.corner {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  z-index: 4;
+}
+
+.corner-top {
+  top: 17px;
+  left: 17px;
+
+  border-top: 1px solid #102b45;
+  border-left: 1px solid #102b45;
+}
+
+.corner-bottom {
+  bottom: 17px;
+  right: 17px;
+
+  border-bottom: 1px solid #102b45;
+  border-right: 1px solid #102b45;
+}
+
+/* BOTTOM LABEL */
+
+.founder-image-label {
+  position: absolute;
+
+  bottom: -23px;
+  right: -24px;
+
+  padding: 15px 19px;
+
+  background: #06233d;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+  z-index: 5;
+}
+
+/* =================================
+   RIGHT CONTENT
+================================= */
+
+.founder-content {
+  width: 100%;
+  max-width: 900px;
+  padding: 0;
+}
+
+/* SECTION LABEL */
+
+.founder-label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #269f91;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+
+  margin-bottom: 28px;
+}
+
+.founder-label span {
+  display: block;
+  width: 30px;
+  height: 1px;
+  flex-shrink: 0;
+
+  background: #d5a94e;
+}
+
+/* MAIN HEADING */
+
+.founder-content h2 {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: #08233d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 3.7vw, 64px);
+
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -1.2px;
+}
+
+/* Keep commitment on the same line */
+
+.founder-content h2 span {
+  display: inline !important;
+
+  color: #319e91;
+  font-style: italic;
+  white-space: normal;
+}
+
+/* QUOTE */
+
+.founder-quote-mark {
+  margin-top: 20px;
+
+  color: #e3b653;
+  font-family: Georgia, serif;
+  font-size: 43px;
+  line-height: 0.8;
+}
+
+/* PARAGRAPHS */
+
+.founder-content > p {
+  margin: 23px 0 0;
+
+  color: #68798e;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.founder-content .founder-intro {
+  margin-top: 15px;
+}
+
+/* =================================
+   FOUNDER SIGNATURE
+================================= */
+
+.founder-signature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+
+  margin-top: 29px;
+  padding: 0;
+
+  border: none;
+  color: #08233d;
+}
+
+.signature-line {
+  display: block;
+
+  width: 37px;
+  height: 2px;
+
+  flex-shrink: 0;
+  background: #c58b30;
+}
+
+.founder-signature h4 {
+  margin: 0 0 5px;
+
+  color: #08233d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.founder-signature p {
+  margin: 0;
+
+  color: #78899b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1100px) {
+
+  .founder-section {
+    padding: 90px 0;
+  }
+
+  .founder-container {
+    width: 90%;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 65px;
+  }
+
+  .founder-content h2 {
+    font-size: clamp(38px, 4.2vw, 50px);
+  }
+
+  .founder-image-label {
+    right: -12px;
+    font-size: 9px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+  .founder-section {
+    padding: 75px 0 85px;
+  }
+
+  .founder-container {
+    width: 88%;
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .founder-visual {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .founder-frame {
+    aspect-ratio: 1.07 / 1;
+  }
+
+  .founder-placeholder {
+    width: 75px;
+    height: 75px;
+  }
+
+  .founder-image-label {
+    right: -8px;
+    bottom: -18px;
+
+    padding: 12px 14px;
+    font-size: 9px;
+  }
+
+  .founder-content {
+    max-width: 100%;
+  }
+
+  .founder-content h2 {
+    font-size: clamp(37px, 7vw, 48px);
+    line-height: 1.17;
+  }
+
+  .founder-label {
+    font-size: 10px;
+    margin-bottom: 23px;
+  }
+
+  .founder-content > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+  .founder-container {
+    width: 90%;
+  }
+
+  .founder-content h2 {
+    font-size: 35px;
+  }
+
+  .founder-image-label {
+    font-size: 8px;
+    padding: 11px;
+  }
+
+  .founder-label {
+    letter-spacing: 1.2px;
+  }
+
+  .founder-circle.circle-outer {
+    width: 86%;
+  }
+
+  .founder-circle.circle-inner {
+    width: 66%;
+  }
+}

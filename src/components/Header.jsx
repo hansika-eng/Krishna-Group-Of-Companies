@@ -1,31 +1,38 @@
-import { useState } from "react";
+
+import React, { useState } from "react";
 import {
+  Building2,
+  ChevronDown,
+  ArrowUpRight,
   Menu,
   X,
-  ChevronDown,
-  ChevronRight
+  House,
+  Clapperboard,
+  Ship,
+  Code2,
+  Shirt,
+  Megaphone
 } from "lucide-react";
 
 import "../styles/Header.css";
-import logo from "../img/KGC-logo.png";
-
-const services = [
-  "Krishna Constructions",
-  "Real Estate",
-  "Marketing",
-  "Studios",
-  "Imports & Exports",
-  "Software Solutions",
-  "Textiles"
-];
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setServicesOpen(false);
+  const businesses = [
+    { name: "Krishna Constructions", icon: Building2, id: "construction" },
+    { name: "Real Estate", icon: House, id: "real-estate" },
+    { name: "Studios", icon: Clapperboard, id: "studios" },
+    { name: "Imports & Exports", icon: Ship, id: "imports-exports" },
+    { name: "Software Solutions", icon: Code2, id: "software" },
+    { name: "Textiles", icon: Shirt, id: "textiles" },
+    { name: "Marketing", icon: Megaphone, id: "marketing" }
+  ];
+
+  const closeMenus = () => {
+    setDropdownOpen(false);
+    setMobileOpen(false);
   };
 
   return (
@@ -33,90 +40,86 @@ function Header() {
       <div className="navbar">
 
         {/* LOGO */}
-        <a href="#home" className="logo" onClick={closeMenu}>
-          <img src={logo} alt="Krishna Group of Companies" />
+        <a href="#home" className="logo" onClick={closeMenus}>
+          <div className="logo-icon">
+            <Building2 size={27} strokeWidth={1.6} />
+          </div>
+
+          <div className="logo-text">
+            <h2>KRISHNA</h2>
+            <span>GROUP OF COMPANIES</span>
+          </div>
         </a>
 
         {/* MOBILE MENU BUTTON */}
         <button
           className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
+          aria-expanded={mobileOpen}
         >
-          {menuOpen ? <X /> : <Menu />}
+          {mobileOpen ? <X size={25} /> : <Menu size={25} />}
         </button>
 
         {/* NAVIGATION */}
-        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <nav className={`nav-links ${mobileOpen ? "active" : ""}`}>
 
-          <a href="#home" onClick={closeMenu}>
-            Home
-          </a>
+          <a href="#home" onClick={closeMenus}>Home</a>
 
-          <a href="#about" onClick={closeMenu}>
-            About
-          </a>
+          <a href="#about" onClick={closeMenus}>About</a>
 
-          {/* SERVICES DROPDOWN */}
+          {/* BUSINESSES DROPDOWN */}
           <div
-            className={`nav-dropdown ${servicesOpen ? "open" : ""}`}
+            className={`nav-dropdown ${dropdownOpen ? "open" : ""}`}
             onMouseEnter={() => {
-              if (window.innerWidth > 900) {
-                setServicesOpen(true);
-              }
+              if (window.innerWidth > 900) setDropdownOpen(true);
             }}
             onMouseLeave={() => {
-              if (window.innerWidth > 900) {
-                setServicesOpen(false);
-              }
+              if (window.innerWidth > 900) setDropdownOpen(false);
             }}
           >
             <button
               className="dropdown-trigger"
-              onClick={() => setServicesOpen(!servicesOpen)}
-              aria-expanded={servicesOpen}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              aria-expanded={dropdownOpen}
             >
-              Services
-              <ChevronDown size={15} />
+              Businesses
+              <ChevronDown
+                size={17}
+                className={dropdownOpen ? "chevron-rotated" : ""}
+              />
             </button>
 
             <div className="dropdown-menu">
-              {services.map((service) => (
-                <a
-                  key={service}
-                  href="#services"
-                  onClick={closeMenu}
-                >
-                  <ChevronRight size={14} />
-                  {service}
-                </a>
-              ))}
+              {businesses.map((business) => {
+                const Icon = business.icon;
+
+                return (
+                  <a
+                    href={`#${business.id}`}
+                    key={business.id}
+                    onClick={closeMenus}
+                  >
+                    <Icon size={20} strokeWidth={1.8} />
+                    <span>{business.name}</span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          <a href="#contact" onClick={closeMenu}>
-            Contact
-          </a>
-
-          <a href="#founder" onClick={closeMenu}>
-            Founder
-          </a>
-
-          <a href="#founder-message" onClick={closeMenu}>
-            Founder Message
-          </a>
+          <a href="#contact" onClick={closeMenus}>Contact</a>
 
           <a
             href="#contact"
             className="nav-contact"
-            onClick={closeMenu}
+            onClick={closeMenus}
           >
-            Get In Touch
+            Get in touch
+            <ArrowUpRight size={19} />
           </a>
 
         </nav>
-
       </div>
     </header>
   );

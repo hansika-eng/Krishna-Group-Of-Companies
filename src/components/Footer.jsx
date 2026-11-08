@@ -1,12 +1,7 @@
-import {
-  Camera,
-  Users,
-  BriefcaseBusiness,
-  Mail
-} from "lucide-react";
 
+import { ArrowUpRight } from "lucide-react";
 import "../styles/Footer.css";
-import logo from "../img/KGC-logo.png";
+import logo from "../images/kcg logo.png";
 
 function Footer() {
   return (
@@ -14,14 +9,16 @@ function Footer() {
 
       <div className="footer-container">
 
-        {/* BRAND */}
+        {/* BRAND COLUMN */}
         <div className="footer-brand">
 
-          <img src={logo} alt="Krishna Group of Companies" />
+          <a href="#home" className="footer-logo">
+            <img src={logo} alt="Krishna Group of Companies" />
+          </a>
 
           <p>
-            Building Businesses. Creating Opportunities.
-            Shaping Tomorrow.
+            A diversified business group creating meaningful
+            opportunities across multiple industries.
           </p>
 
         </div>
@@ -29,69 +26,70 @@ function Footer() {
         {/* QUICK LINKS */}
         <div className="footer-column">
 
-          <h3>Quick Links</h3>
+          <h3>EXPLORE</h3>
 
           <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <a href="#about">About us</a>
+          <a href="#services">Our businesses</a>
+          <a href="#founder">Founder's message</a>
           <a href="#contact">Contact</a>
 
         </div>
 
-        {/* BUSINESS DIVISIONS */}
+        {/* BUSINESS LINKS */}
         <div className="footer-column">
 
-          <h3>Our Businesses</h3>
+          <h3>OUR BUSINESSES</h3>
 
-          <a href="#services">Constructions</a>
+          <a href="#services">Krishna Constructions</a>
           <a href="#services">Real Estate</a>
-          <a href="#services">Marketing</a>
           <a href="#services">Studios</a>
           <a href="#services">Imports & Exports</a>
           <a href="#services">Software Solutions</a>
           <a href="#services">Textiles</a>
+          <a href="#services">Marketing</a>
 
         </div>
 
-        {/* CONTACT */}
-        <div className="footer-column">
+        {/* CONTACT COLUMN */}
+        <div className="footer-column footer-contact">
 
-          <h3>Get In Touch</h3>
+          <h3>GET IN TOUCH</h3>
 
           <p>
-            Connect with Krishna Group of Companies
-            for business enquiries and opportunities.
+            We'd love to hear from you.
           </p>
 
-          <div className="footer-socials">
+          <a href="mailto:info@krishnagroup.com"
+             className="footer-conversation">
 
-            <a href="#contact" aria-label="Instagram">
-              <Camera />
-            </a>
+            Start a conversation
+            <ArrowUpRight size={17} />
 
-            <a href="#contact" aria-label="Community">
-              <Users />
-            </a>
+          </a>
 
-            <a href="#contact" aria-label="Business">
-              <BriefcaseBusiness />
-            </a>
-
-            <a href="#contact" aria-label="Email">
-              <Mail />
-            </a>
-
-          </div>
+          <span className="footer-contact-note">
+            Company contact details to be provided
+          </span>
 
         </div>
 
       </div>
 
-      {/* COPYRIGHT */}
+      {/* FOOTER BOTTOM */}
       <div className="footer-bottom">
 
-        © {new Date().getFullYear()} Krishna Group of Companies.
-        All Rights Reserved.
+        <p>
+          © {new Date().getFullYear()} Krishna Group of Companies
+        </p>
+
+        <span className="footer-tagline">
+          BUILT ON VISION. GROUNDED IN TRUST.
+        </span>
+
+        <a href="#home" className="back-to-top">
+          Back to top ↑
+        </a>
 
       </div>
 
